@@ -20,7 +20,7 @@ const SignIn = () => {
       <TextInput
         value={password}
         placeholder='nhap lai mat'
-        onChangeText={setUserName}
+        onChangeText={setPassword}
         secureTextEntry={true}
         
       />
