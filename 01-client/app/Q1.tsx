@@ -1,13 +1,13 @@
-import { Text, View, StyleSheet, Pressable, Button} from "react-native";
+import { Text, View, StyleSheet, Pressable} from "react-native";
 import { Image } from "expo-image";
 import React from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import {useEffect} from 'react';
 import {useFonts} from "expo-font";
-import { Redirect, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 
 
-export default function Index() {
+export default function Q1() {
   const router = useRouter();
 
   const [loaded, error] = useFonts({
@@ -42,19 +42,6 @@ export default function Index() {
 
       </View>
 
-      <View>
-
-        <Image
-          source={require("../assets/images/platypus.png")}
-          style = {{
-            width: 256,
-            height: 248,
-            marginTop: 100
-          }}
-        />
-
-      </View>
-
       <View style= {{
           flex: 1,
           justifyContent: "center",
@@ -64,8 +51,7 @@ export default function Index() {
         }}>
 
         <Text style = {[styles.nunitoLight, {marginBottom: 20, fontSize: 18, textAlign: "center"}]}> 
-          Ba mẹ đọc các bộ phận cơ thể và để bé chỉ trên cơ thể mình. 
-          Mỗi khi trẻ chỉ đúng các bộ phận trên cơ thể, hãy yêu cầu trẻ nhắc lại từ đó theo mình.
+          Ba mẹ có thể đọc theo các bộ phận cơ thể dưới đây và ấn chọn khi đã đọc bộ phận đó rồi nhé.
         </Text>
 
       </View>
@@ -81,20 +67,14 @@ export default function Index() {
         }}>
 
         <Pressable
-          style = {{
-            width: 340,
-            height: 30,
-          }}
-          onPress={() => {   
-            router.push("/Q1");
-          }}
-        >
+          onPress={() => console.log("Pressed")}>
 
           <Text style = {[styles.nunitoSemiBold, {fontSize: 24, textAlign: "center"}]}>
             Tiếp Tục
           </Text>
         </Pressable>
       </View>
+
     </View>
   );
 }
@@ -109,9 +89,24 @@ const styles = StyleSheet.create({
   nunitoLight: {
     fontFamily: "Nunito-Light",
     color: "#555",
+    fontSize: 16
   },
   nunitoSemiBold: {
     fontFamily: "Nunito-SemiBold",
     color: "#555",
   },
+  card:{
+    width: 152,
+    height: 62,
+    backgroundColor: "white",
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image:{
+    width: 44,
+    height: 44,
+    marginBottom: 5
+  }
+
 });
