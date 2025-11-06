@@ -9,15 +9,19 @@ function Flow3() {
   const descript = "Hôm nay mình sẽ học về các bộ phận trên cơ thể nhé!";
   const button = "Tiếp tục";
 
+  const testBtn = () => alert("pressed");
+
   return (
     <SafeAreaView style={styles.container}>
-      <CloseBtn />
+      <CloseBtn onPress={testBtn} />
       <View>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.lesson}>{lesson}</Text>
       </View>
       <Text style={styles.descript}>{descript}</Text>
-      <Button style={styles.button}>{button}</Button>
+      <Button style={styles.button} onPress={testBtn}>
+        {button}
+      </Button>
     </SafeAreaView>
   );
 }
@@ -47,6 +51,8 @@ const styles = StyleSheet.create({
   button: {
     width: "100%",
     marginBottom: 32,
+    maxWidth: 600,
+    marginInline: "auto",
   },
 });
 

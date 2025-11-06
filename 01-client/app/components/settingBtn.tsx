@@ -1,7 +1,7 @@
 import { Feather } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 
-function SettingBtn({ ...props }) {
+function SettingBtn({ ...props }: TouchableOpacityProps) {
   return (
     <TouchableOpacity {...props}>
       <Feather name="settings" color={"#000"} size={24} />

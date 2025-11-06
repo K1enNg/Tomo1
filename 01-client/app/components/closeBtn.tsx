@@ -1,7 +1,7 @@
 import { AntDesign } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 
-function CloseBtn({ ...props }) {
+function CloseBtn({ ...props }: TouchableOpacityProps) {
   return (
     <TouchableOpacity {...props}>
       <AntDesign name="close-circle" color="#000" size={24} />

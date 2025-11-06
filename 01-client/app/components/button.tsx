@@ -1,19 +1,24 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
 
 const button1 = "rgba(255, 231, 144, 1)";
 const button2 = "rgba(248, 215, 95, 1)";
 const button3 = "rgba(255, 165, 68, 1)";
 
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityProps {
   children: React.ReactNode;
   style?: {};
 }
 
-function Button({ children, style, ...props }: ButtonProps) {
+function Button({ children, ...props }: ButtonProps) {
   return (
-    <TouchableOpacity style={[styles.button, style]} {...props}>
+    <TouchableOpacity style={[styles.button, props.style]} {...props}>
       <LinearGradient
         colors={[button1, button2, button3]}
         start={{ x: 0, y: 0 }}
