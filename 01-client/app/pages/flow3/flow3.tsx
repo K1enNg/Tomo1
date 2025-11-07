@@ -1,6 +1,6 @@
 import Button from "@/app/components/button";
 import CloseBtn from "@/app/components/closeBtn";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function Flow3() {
@@ -18,7 +18,13 @@ function Flow3() {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.lesson}>{lesson}</Text>
       </View>
-      <Text style={styles.descript}>{descript}</Text>
+      <View>
+        <Image
+          source={require("@/assets/images/mascot_logo.png")}
+          style={styles.img}
+        />
+        <Text style={styles.descript}>{descript}</Text>
+      </View>
       <Button style={styles.button} onPress={testBtn}>
         {button}
       </Button>
@@ -44,9 +50,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 32,
   },
+  img: {
+    marginInline: "auto",
+  },
   descript: {
     textAlign: "center",
     fontSize: 16,
+    marginBlockStart: 16,
   },
   button: {
     width: "100%",
