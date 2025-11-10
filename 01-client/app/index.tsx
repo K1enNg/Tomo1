@@ -1,5 +1,6 @@
+import { PAGE_2 } from "@/constants/flow3";
 import { View } from "react-native";
-import SignUp from "./SignUp";
+import Flow3 from "./flow3";
 
 export default function Index() {
   return (
@@ -11,7 +12,8 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <SignUp />
+      <Flow3 {...PAGE_2} />
+      {/* <Information {...PAGE_3} /> */}
     </View>
   );
 }

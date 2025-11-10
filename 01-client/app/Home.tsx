@@ -1,4 +1,3 @@
-import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const lessons = [
@@ -25,7 +24,7 @@ const angleStep = Math.PI / 8;
 function Home() {
   return (
     <SafeAreaView>
-      <View
+      {/* <View
         style={{
           display: "flex",
           width: "100%",
@@ -83,7 +82,7 @@ function Home() {
             );
           }}
         />
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 }

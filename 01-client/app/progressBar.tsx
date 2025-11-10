@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   progress: {
     borderRadius: 1000,
     height: "100%",
+    width: "100%",
   },
 });
 

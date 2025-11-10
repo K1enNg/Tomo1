@@ -1,23 +1,43 @@
-import Button from "@/app/components/button";
-import CloseBtn from "@/app/components/closeBtn";
+import Button from "@/app/button";
+import { useRouter } from "expo-router";
+import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import CloseBtn from "./closeBtn";
+import ProgressGroup from "./progressGroup";
 
-function Flow3() {
-  const title = "Bài 01";
-  const lesson = "Bộ phận cơ thể";
-  const descript = "Hôm nay mình sẽ học về các bộ phận trên cơ thể nhé!";
-  const button = "Tiếp tục";
+export interface Flow3Props {
+  progress?: number;
+  title?: string;
+  lesson?: string;
+  descript: string;
+  button: string;
+}
 
+const Flow3: React.FC<Flow3Props> = ({
+  progress,
+  title,
+  lesson,
+  descript,
+  button,
+}) => {
+  const router = useRouter();
   const testBtn = () => alert("pressed");
 
   return (
     <SafeAreaView style={styles.container}>
-      <CloseBtn onPress={testBtn} />
-      <View>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.lesson}>{lesson}</Text>
-      </View>
+      {!progress ? (
+        <CloseBtn onPress={testBtn} />
+      ) : (
+        <ProgressGroup progress={0.5} />
+      )}
+
+      {(title || lesson) && (
+        <View>
+          {title && <Text style={styles.title}>{title}</Text>}
+          {lesson && <Text style={styles.lesson}>{lesson}</Text>}
+        </View>
+      )}
       <View>
         <Image
           source={require("@/assets/images/mascot_logo.png")}
@@ -30,7 +50,7 @@ function Flow3() {
       </Button>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
