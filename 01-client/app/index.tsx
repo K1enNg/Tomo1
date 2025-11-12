@@ -1,18 +1,20 @@
-import { Text, View } from "react-native";
-import SignUp from "./SignUp";
-import Q1Title from "./Q1Title";
-import Q1 from "./Q1";
-
+import { PAGE_1 } from "@/constants/bodyParts";
+import { View } from "react-native";
+import BodyParts from "./bodyParts";
 
 export default function Index() {
   return (
     <View
       style={{
         flex: 1,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <Q1Title/>
-      {/* <SignUp/> */}
+      {/* <Flow3 {...PAGE_3} /> */}
+      <BodyParts {...PAGE_1} />
+      {/* <Information {...PAGE_3} /> */}
     </View>
   );
 }
