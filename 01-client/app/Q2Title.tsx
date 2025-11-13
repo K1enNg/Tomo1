@@ -1,119 +1,104 @@
-import { Text, View, StyleSheet, Pressable } from "react-native";
-import { Image } from "expo-image";
-import React from "react";
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import { useFonts } from "expo-font";
-import { useRouter } from "expo-router";
+// import { Text, View, StyleSheet, Pressable } from "react-native";
+// import { Image } from "expo-image";
+// import React from "react";
+// import * as SplashScreen from 'expo-splash-screen';
+// import { useEffect } from 'react';
+// import { useFonts } from "expo-font";
+// import { useRouter } from "expo-router";
 
 
-export default function Q2Title() {
-  const router = useRouter();
+// export default function Q2Title() {
+//   const router = useRouter();
 
-  const [loaded, error] = useFonts({
-    'Nunito-Light': require('../assets/fonts/Nunito/static/Nunito-Light.ttf'),
-    'Nunito-SemiBold': require('../assets/fonts/Nunito/static/Nunito-SemiBold.ttf')
-  });
+//   return (
+//     <View style={styles.container}>
 
-  useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded, error]);
+//        <View>
 
-  if (!loaded && !error) {
-    return null;
-  }
+//         <Image
+//           source={require("../assets/images/ProgressBar100.png")}
+//           style = {{
+//             width: 360,
+//             height: 24,
+//             marginTop: 100
+//           }}
+//           contentFit="cover"
+//         />
 
-  return (
-    <View style={styles.container}>
+//       </View>
 
-       <View>
+//       <View>
 
-        <Image
-          source={require("../assets/images/ProgressBar100.png")}
-          style = {{
-            width: 360,
-            height: 24,
-            marginTop: 100
-          }}
-          contentFit="cover"
-        />
+//         <Image
+//           source={require("../assets/images/platypus.png")}
+//           style = {{
+//             width: 256,
+//             height: 248,
+//             marginTop: 100
+//           }}
+//         />
 
-      </View>
+//       </View>
 
-      <View>
+//       <View style= {{
+//           flex: 1,
+//           justifyContent: "center",
+//           alignItems: "center",
+//           width: 340,
+//           height: 100
+//         }}>
 
-        <Image
-          source={require("../assets/images/platypus.png")}
-          style = {{
-            width: 256,
-            height: 248,
-            marginTop: 100
-          }}
-        />
+//         <Text style = {[styles.nunitoLight, {marginBottom: 20, fontSize: 18, textAlign: "center"}]}> 
+//           Ba mẹ bày các thẻ học trên bàn, yêu cầu trẻ chỉ đúng tên bộ phận cơ thể khi đọc. 
+//           Mỗi khi trẻ chỉ đúng thẻ, hãy yêu cầu trẻ nhắc lại từ đó theo mình.
+//         </Text>
 
-      </View>
-
-      <View style= {{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          width: 340,
-          height: 100
-        }}>
-
-        <Text style = {[styles.nunitoLight, {marginBottom: 20, fontSize: 18, textAlign: "center"}]}> 
-          Ba mẹ bày các thẻ học trên bàn, yêu cầu trẻ chỉ đúng tên bộ phận cơ thể khi đọc. 
-          Mỗi khi trẻ chỉ đúng thẻ, hãy yêu cầu trẻ nhắc lại từ đó theo mình.
-        </Text>
-
-      </View>
+//       </View>
       
-      <View style= {{
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor:"#fcc555",
-          width: 340,
-          height: 50,
-          borderRadius: 20, 
-          marginBottom: 60
-        }}>
+//       <View style= {{
+//           justifyContent: "center",
+//           alignItems: "center",
+//           backgroundColor:"#fcc555",
+//           width: 340,
+//           height: 50,
+//           borderRadius: 20, 
+//           marginBottom: 60
+//         }}>
 
-        <Pressable
-          style = {{
-            width: 340,
-            height: 30,
-          }}
-          onPress={() => {   
-            router.push('/Q2');
-          }}
-        >
+//         <Pressable
+//           style = {{
+//             width: 340,
+//             height: 30,
+//           }}
+//           onPress={() => {   
+//             router.push('/Q2');
+//           }}
+//         >
 
-          <Text style = {[styles.nunitoSemiBold, {fontSize: 24, textAlign: "center"}]}>
-            Tiếp Tục
-          </Text>
-        </Pressable>
-      </View>
-    </View>
-  );
-}
+//           <Text style = {[styles.nunitoSemiBold, {fontSize: 24, textAlign: "center"}]}>
+//             Tiếp Tục
+//           </Text>
+//         </Pressable>
+//       </View>
+//     </View>
+//   );
+// }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor:"#cfeef8"
-  },
-  nunitoLight: {
-    fontFamily: "Nunito-Light",
-    color: "#555",
-  },
-  nunitoSemiBold: {
-    fontFamily: "Nunito-SemiBold",
-    color: "#555",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//     backgroundColor:"#cfeef8"
+//   },
+//   nunitoLight: {
+//     fontFamily: "Nunito-Light",
+//     color: "#555",
+//   },
+//   nunitoSemiBold: {
+//     fontFamily: "Nunito-SemiBold",
+//     color: "#555",
+//   },
+// });
 
-export { Q2Title };
+// export { Q2Title };

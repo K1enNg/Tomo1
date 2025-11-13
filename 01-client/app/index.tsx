@@ -1,20 +1,5 @@
-import { Text, View } from "react-native";
-import SignUp from "./SignUp";
-import Q1Title from "./Q1Title";
-import Q1 from "./Q1";
-import QuizFrame from "./QuizFrame";
-
+import { Redirect } from "expo-router";
 
 export default function Index() {
-
-  return (
-    <View
-      style={{
-        flex: 1
-      }}
-    >
-      <Q1Title/>
-      {/* <SignUp/> */}
-    </View>
-  );
+  return <Redirect href = "/flow2/Flow2Q1"/>;
 }

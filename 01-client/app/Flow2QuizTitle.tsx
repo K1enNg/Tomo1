@@ -1,42 +1,52 @@
-import { Text, View, StyleSheet, Pressable } from "react-native";
+import { Text, View, StyleSheet, Pressable, ImageSourcePropType } from "react-native";
 import { Image } from "expo-image";
-import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
-import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
+import ProgressGroup from "./progressGroup";
 
-
-export default function Q1Title() {
-  const router = useRouter();
+export interface QuizTitleProps {
+    progress?: number;
+    source?: ImageSourcePropType;
+    description?: string;
+    btnText?: string;
+    time?: boolean
+}
   
+const QuizTitle: React.FC<QuizTitleProps> = ({
+    progress,
+    source,
+    description,
+    btnText,
+    time
+}) => {
+  const router = useRouter();
+
+  time == true && useEffect(() => {
+      let timer = setTimeout(() => {
+        router.push("/"); 
+      }, 5000);
+      return () => clearTimeout(timer);
+    }, []);
+
   return (
     <View style={styles.container}>
 
-       <View>
-
-        <Image
-          source={require("../assets/images/Group95.png")}
-          style = {{
-            width: 360,
-            height: 24,
-            marginTop: 100
-          }}
-          contentFit="cover"
-        />
-
+      <View style={{ 
+        width: "100%",
+        marginHorizontal: 10
+      }}>
+        <ProgressGroup progress={progress ?? 0}/>
       </View>
 
       <View>
-
-        <Image
-          source={require("../assets/images/platypus.png")}
+        { source && <Image
+          source={source}
           style = {{
             width: 256,
             height: 248,
             marginTop: 100
           }}
-        />
-
+        /> }
       </View>
 
       <View style= {{
@@ -47,10 +57,10 @@ export default function Q1Title() {
           height: 100
         }}>
 
-        <Text style = {[styles.nunitoLight, {marginBottom: 20, fontSize: 18, textAlign: "center"}]}> 
-          Ba mẹ đọc các bộ phận cơ thể và để bé chỉ trên cơ thể mình. 
-          Mỗi khi trẻ chỉ đúng các bộ phận trên cơ thể, hãy yêu cầu trẻ nhắc lại từ đó theo mình.
+        {description && <Text style = {[styles.nunitoLight, {marginBottom: 20, fontSize: 18, textAlign: "center"}]}> 
+          {description}
         </Text>
+        }
 
       </View>
       
@@ -70,18 +80,21 @@ export default function Q1Title() {
             height: 30,
           }}
           onPress={() => {   
-            router.push('/Q1');
+            // router.push('/Q1');
+            console.log("Button Pressed");
           }}
         >
 
           <Text style = {[styles.nunitoSemiBold, {fontSize: 24, textAlign: "center"}]}>
-            Tiếp Tục
+            {btnText}
           </Text>
         </Pressable>
       </View>
     </View>
   );
 }
+
+export default QuizTitle;
 
 const styles = StyleSheet.create({
   container: {
@@ -99,5 +112,3 @@ const styles = StyleSheet.create({
     color: "#555",
   },
 });
-
-export { Q1Title };

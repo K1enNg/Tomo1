@@ -5,20 +5,6 @@ import React, { useEffect } from 'react';
 import { useFonts } from "expo-font";
 
 export default function QuizFrame({ item }: any) {
-    const [loaded, error] = useFonts({
-        'Nunito-Bold': require('../assets/fonts/Nunito/static/Nunito-Bold.ttf')
-      });
-    
-      useEffect(() => {
-        if (loaded || error) {
-          SplashScreen.hideAsync();
-        }
-      }, [loaded, error]);
-    
-      if (!loaded && !error) {
-        return null;
-      }
-
     return (
         <View style={styles.container}>
             <View style={styles.card}>
