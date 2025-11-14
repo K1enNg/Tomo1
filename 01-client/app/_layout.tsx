@@ -3,6 +3,8 @@ import { StyleSheet, View } from "react-native"
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from "expo-font";
 import React ,{ useEffect } from 'react';
+import { Stack } from "expo-router/stack";
+
 
 export default function RootLayout() {
   SplashScreen.preventAutoHideAsync();
@@ -24,15 +26,18 @@ export default function RootLayout() {
     }
 
   return (
-    <View style={styles.container}>
-      <Slot />
-    </View>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: "#2bf5fb" }, 
+      }}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2bf5fb',
+    backgroundColor: "#2bf5fb",
   },
-})
+});

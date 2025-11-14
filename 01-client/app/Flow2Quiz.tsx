@@ -3,7 +3,7 @@ import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import ProgressGroup from "./progressGroup";
 import React, {useState} from "react";
-import QuizFrame from "./flow2/QuizFrame";
+import QuizFrame from "./QuizFrame";
 
 export interface QuizProps {
     progress: number;
