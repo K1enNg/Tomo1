@@ -29,5 +29,5 @@ import { Redirect } from "expo-router";
 
 export default function Index() {
   // immediately go to Information1Screen on launch
-  return <Redirect href="/information/Information1Screen" />;
+  return <Redirect href="/_sitemap" />;
 }

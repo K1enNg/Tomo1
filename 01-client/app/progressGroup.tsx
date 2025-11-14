@@ -12,6 +12,7 @@ function ProgressGroup({ progress }: { progress: number }) {
           gap: 16,
           flexDirection: "row",
           alignItems: "center",
+          marginHorizontal: 12,
         }}
       >
         <SettingBtn />
