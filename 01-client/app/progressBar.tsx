@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 1000,
     height: 20,
-    margin: 20,
   },
   progress: {
     borderRadius: 1000,

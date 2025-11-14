@@ -25,6 +25,7 @@ const Information: React.FC<InformationProps> = ({
   buttonLabels,
   extraText,
 }) => {
+  //Consider putting this in a _layout.tsx if used widely
   const { width, height } = useWindowDimensions(); // 👈 dynamically get screen size
 
   // Determine if it's tablet or phone
