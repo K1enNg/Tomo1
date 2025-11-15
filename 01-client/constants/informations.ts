@@ -1,4 +1,5 @@
 import { InformationProps } from "@/app/Information";
+import { ROUTES } from "./naviagtion";
 
 export const PAGE_1: InformationProps = {
   source: require("../assets/images/informations/img_1.png"),
@@ -6,8 +7,8 @@ export const PAGE_1: InformationProps = {
   description:
     "Ứng dụng của chúng tôi giúp bạn khám phá thông tin và trải nghiệm học tập thú vị mỗi ngày.",
   buttonLabels: ["Tiếp tục", "Bỏ qua"],
-  nextScreen: "/information/Information2Screen",
-  skipScreen: "/auth/SignupScreen",
+  nextScreen: ROUTES.INFORMATION2,
+  skipScreen: ROUTES.SIGNUP,
 };
 
 export const PAGE_2: InformationProps = {
@@ -15,8 +16,8 @@ export const PAGE_2: InformationProps = {
   title: "Khám phá tính năng",
   description: "Dễ dàng theo dõi tiến trình, lưu trữ thông tin và chia sẻ kiến thức với bạn bè.",
   buttonLabels: ["Tiếp tục", "Bỏ qua"],
-  nextScreen: "/information/Information3Screen",
-  skipScreen: "/auth/SignupScreen",
+  nextScreen: ROUTES.INFORMATION3,
+  skipScreen: ROUTES.SIGNUP,
 };
 
 export const PAGE_3: InformationProps = {
@@ -26,6 +27,6 @@ export const PAGE_3: InformationProps = {
     "Tạo tài khoản để bắt đầu hành trình của bạn cùng chúng tôi. Đăng ký hoặc đăng nhập để tiếp tục.",
   buttonLabels: ["Đăng ký", "Đăng nhập"],
   extraText: "Bạn đã có tài khoản?",
-  nextScreen: "/auth/SignupScreen",
-  skipScreen: "/auth/SignupScreen",
+  nextScreen: ROUTES.SIGNUP,
+  skipScreen: ROUTES.SIGNUP,
 };

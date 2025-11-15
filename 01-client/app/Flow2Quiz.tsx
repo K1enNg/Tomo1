@@ -11,6 +11,8 @@ export interface QuizProps {
     description?: string;
     btnText?: string;
     zoom?: boolean;
+    next?: string;
+    audio?: ImageSourcePropType
 }
 
 export interface item {
@@ -24,7 +26,9 @@ const Flow2Quiz: React.FC<QuizProps> = ({
     items,
     description,
     btnText,
-    zoom 
+    zoom,
+    next,
+    audio
 }) => {
   const router = useRouter();
 
@@ -90,7 +94,7 @@ const Flow2Quiz: React.FC<QuizProps> = ({
             </Modal>
           )}
 
-          { zoom == true && <View
+          { zoom == true && audio &&<View
               style={styles.row}
             >
               <Pressable
@@ -99,7 +103,7 @@ const Flow2Quiz: React.FC<QuizProps> = ({
                   }}
               >
                 <Image
-                    source={require("../assets/images/flow2/Audio.png")}
+                    source={audio}
                     style = {{
                       width: 45, 
                       height: 45, 
@@ -123,8 +127,8 @@ const Flow2Quiz: React.FC<QuizProps> = ({
             backgroundColor: "#fcc555",
           }}
           onPress = {() => {
-            // router.push('/Pause');
-            console.log("Button Pressed");
+            router.push(next);
+            // console.log("Button Pressed");
           }}
         >
           { btnText && <Text style={[styles.nunitoLarge, { textAlign: "center" }]}>

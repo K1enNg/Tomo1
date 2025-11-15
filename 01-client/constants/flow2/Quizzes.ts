@@ -1,5 +1,6 @@
 import { QuizProps } from "@/app/Flow2Quiz";    
 import { item } from "@/app/Flow2Quiz";
+import { ROUTES } from "../naviagtion";
 
 const items1: item[] = [
     { id: 1, label: 'Tai', image: require('../../assets/images/flow2/tai.png') },
@@ -31,11 +32,13 @@ export const QUIZ_1: QuizProps = {
     items: items1,
     description: "Ba mẹ có thể đọc theo các bộ phận cơ thể dưới đây và ấn chọn khi đã đọc bộ phận đó rồi nhé.",
     btnText: "Tiếp Tục",
-    zoom: false
+    zoom: false,
+    next: ROUTES.FLOW2_PAUSE
 }
 
 export const QUIZ_2: QuizProps = {   
     progress: 1.0, 
     items: items2,
-    zoom: true
+    zoom: true,
+    audio: require("../../assets/images/flow2/Audio.png")
 }

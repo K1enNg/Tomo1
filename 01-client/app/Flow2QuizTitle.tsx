@@ -9,7 +9,8 @@ export interface QuizTitleProps {
     source?: ImageSourcePropType;
     description?: string;
     btnText?: string;
-    time?: boolean
+    time?: boolean;
+    next?: string
 }
   
 const QuizTitle: React.FC<QuizTitleProps> = ({
@@ -17,14 +18,15 @@ const QuizTitle: React.FC<QuizTitleProps> = ({
     source,
     description,
     btnText,
-    time
+    time,
+    next
 }) => {
   const router = useRouter();
 
   time == true && useEffect(() => {
       let timer = setTimeout(() => {
-        // router.push("/"); 
-        console.log("Timer finished")
+        router.push(next); 
+        // console.log("Timer finished")
       }, 5000);
       return () => clearTimeout(timer);
     }, []);
@@ -82,8 +84,8 @@ const QuizTitle: React.FC<QuizTitleProps> = ({
             height: 30,
           }}
           onPress={() => {   
-            // router.push('/Q1');
-            console.log("Button Pressed");
+            router.push(next);
+            // console.log("Button Pressed");
           }}
         >
 
