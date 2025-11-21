@@ -1,5 +1,5 @@
-import { QuizTitleProps } from "@/app/Flow2QuizTitle";
 import { ROUTES } from "../naviagtion";
+import { QuizTitleProps } from "@/app/QuizTemplates/QuizTitle";
 
 export const QUIZ_TITLE_1: QuizTitleProps = {
     progress: 0.8,

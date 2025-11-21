@@ -1,5 +1,5 @@
 import React from 'react'
-import QuizTitle from '../Flow2QuizTitle'
+import QuizTitle from '../QuizTemplates/QuizTitle'
 import { QUIZ_PAUSE } from '@/constants/flow2/QuizTitles'
 
 

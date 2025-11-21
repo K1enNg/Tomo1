@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, Pressable, ImageSourcePropType } from "react-na
 import { Image } from "expo-image";
 import React, { useEffect } from 'react';
 import { useRouter } from "expo-router";
-import ProgressGroup from "./progressGroup";
+import ProgressGroup from "../progressGroup";
 
 export interface QuizTitleProps {
     progress?: number;
@@ -12,7 +12,7 @@ export interface QuizTitleProps {
     time?: boolean;
     next?: string
 }
-  
+
 const QuizTitle: React.FC<QuizTitleProps> = ({
     progress,
     source,
@@ -26,7 +26,6 @@ const QuizTitle: React.FC<QuizTitleProps> = ({
   time == true && useEffect(() => {
       let timer = setTimeout(() => {
         router.push(next); 
-        // console.log("Timer finished")
       }, 5000);
       return () => clearTimeout(timer);
     }, []);
@@ -85,7 +84,6 @@ const QuizTitle: React.FC<QuizTitleProps> = ({
           }}
           onPress={() => {   
             router.push(next);
-            // console.log("Button Pressed");
           }}
         >
 

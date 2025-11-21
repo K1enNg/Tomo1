@@ -1,34 +1,21 @@
-import { Text, View, StyleSheet, Pressable, ImageSourcePropType, Modal, LayoutAnimation } from "react-native";
+import { Text, View, StyleSheet, Pressable, Modal } from "react-native";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import ProgressGroup from "./progressGroup";
+import ProgressGroup from "../progressGroup";
 import React, {useState} from "react";
-import QuizFrame from "./QuizFrame";
+import QuizFrame from "./QuizFrameZoom";
+import { QuizProps } from "@/QuestionnaireLogic/quiz";
+import ProcessAnswer from "@/QuestionnaireLogic/ProcessLogic";
 
-export interface QuizProps {
-    progress: number;
-    items: item[];
-    description?: string;
-    btnText?: string;
-    zoom?: boolean;
-    next?: string;
-    audio?: ImageSourcePropType
-}
-
-export interface item {
-  id: number;
-  label: string;
-  image: ImageSourcePropType;
-}
-
-const Flow2Quiz: React.FC<QuizProps> = ({
-    progress,
-    items,
-    description,
-    btnText,
-    zoom,
-    next,
-    audio
+const MultiChoiceQuiz: React.FC<QuizProps> = ({
+  questionId,
+  progress,
+  items,
+  description,
+  btnText,
+  zoom,
+  next,
+  audio
 }) => {
   const router = useRouter();
 
@@ -76,7 +63,14 @@ const Flow2Quiz: React.FC<QuizProps> = ({
                       justifyContent: zoom ? "center" : "flex-start"
                     } 
                   ]}
-                    onPress={() => {zoom == true ? setZoomedItem(item) : console.log(`Pressed ${item.label}`)}}
+                    onPress={() => {
+                      if(zoom == true){
+                        setZoomedItem(item);
+                        ProcessAnswer(questionId, item.id)
+                      }else {
+                        ProcessAnswer(questionId, item.id);
+                      }
+                    }}
                   >
                     <Image source={item.image} style={zoom == true ? styles.imageLarge : styles.imageSmall} />
                     <Text style={ zoom == true ? styles.nunitoLarge: styles.nunitoSmall }>{item.label}</Text>
@@ -128,7 +122,6 @@ const Flow2Quiz: React.FC<QuizProps> = ({
           }}
           onPress = {() => {
             router.push(next);
-            // console.log("Button Pressed");
           }}
         >
           { btnText && <Text style={[styles.nunitoLarge, { textAlign: "center" }]}>
@@ -142,7 +135,7 @@ const Flow2Quiz: React.FC<QuizProps> = ({
   );
 }
 
-export default Flow2Quiz;
+export default MultiChoiceQuiz;
 
 const styles = StyleSheet.create({
   container: {

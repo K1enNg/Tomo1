@@ -15,5 +15,9 @@ export const ROUTES = {
   INFORMATION2: "information/Information2Screen",
   INFORMATION3: "information/Information3Screen",
 
+  ENTRY_TEST1: "entryTest/EntryTest1Screen",
+  ENTRY_TEST2: "entryTest/EntryTest2Screen",
+
+
   INDEX: "/",
 } as const  

@@ -1,8 +1,6 @@
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import { Image } from "expo-image";
-import * as SplashScreen from 'expo-splash-screen';
-import React, { useEffect } from 'react';
-import { useFonts } from "expo-font";
+import React from 'react';
 
 export default function QuizFrame({ item }: any) {
     return (

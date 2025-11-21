@@ -1,5 +1,5 @@
-import { QuizProps } from "@/app/Flow2Quiz";    
-import { item } from "@/app/Flow2Quiz";
+import { item } from "@/QuestionnaireLogic/quiz";
+import { QuizProps } from "@/QuestionnaireLogic/quiz";
 import { ROUTES } from "../naviagtion";
 
 const items1: item[] = [
@@ -28,6 +28,8 @@ const items2: item[] = [
 ]
 
 export const QUIZ_1: QuizProps = {   
+    questionId : "Fl201",
+    type: "multiple",
     progress: 0.8, 
     items: items1,
     description: "Ba mẹ có thể đọc theo các bộ phận cơ thể dưới đây và ấn chọn khi đã đọc bộ phận đó rồi nhé.",
@@ -36,9 +38,12 @@ export const QUIZ_1: QuizProps = {
     next: ROUTES.FLOW2_PAUSE
 }
 
-export const QUIZ_2: QuizProps = {   
+export const QUIZ_2: QuizProps = { 
+    questionId : "Fl202",
+    type: "multiple",  
     progress: 1.0, 
     items: items2,
     zoom: true,
-    audio: require("../../assets/images/flow2/Audio.png")
+    audio: require("../../assets/images/flow2/Audio.png"),
+    answer: [1, 3, 2, 4 ,5 ]
 }
